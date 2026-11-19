@@ -40,7 +40,27 @@ Rating values are not range-checked at database level, so values outside the int
 ## Tech stack
 
 MySQL, MySQL Workbench, SQL (DDL, DML, roles, indexes, procedures, functions, triggers), Python, RelaX (relational algebra)
+## Repository structure
 
+```
+sql/          Schema, sample data, indexes, routines/triggers, example queries
+migration/    Python CSV migration tool
+docs/         Full project report (Portuguese)
+```
+
+## How to run
+
+1. Install MySQL 8+ (or use MySQL Workbench).
+2. Run the scripts in order:
+
+```
+mysql -u root -p < sql/01_criacao_bd.sql
+mysql -u root -p < sql/02_povoamento.sql
+```
+
+3. `sql/05_consultas.sql` contains example queries. It includes `DELETE` statements, so run it block by block, not all at once.
+
+The sample users and passwords in `01_criacao_bd.sql` are for demonstration only.
 ## Report
 
 The complete report (Portuguese) is available in [`Relatorio_Base_de_Dados.pdf`](./Relatorio_Base_de_Dados.pdf).
